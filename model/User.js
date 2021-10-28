@@ -1,9 +1,12 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
 
-const sequelize = new Sequelize("alg_auth", "root", "", {
-  host: "localhost",
-  dialect: "mysql",
-});
+// const sequelize = new Sequelize("alg_auth", "root", "", {
+//   host: "localhost",
+//   dialect: "mysql",
+// });
+
+const sequelize = new Sequelize('postgres://postgres:123456@localhost:5432/postgres');
+
 (async () => {
   await sequelize.sync();
 })();
